@@ -231,6 +231,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 34
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         def runTasks = gradle.startParameter.taskNames
         if(runTasks.toString().contains('bundle')) {
@@ -287,6 +288,9 @@ def getCommandFlavor() {
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     implementation 'com.neovisionaries:nv-websocket-client:2.14'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
 }
 
 configurations.all {
@@ -318,4 +322,3 @@ configurations.implementation {
        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
        exclude group: 'com.squareup.okio', module: 'okio' 
 }       
-

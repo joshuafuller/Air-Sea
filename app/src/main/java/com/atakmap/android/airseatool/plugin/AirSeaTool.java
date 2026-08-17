@@ -272,6 +272,7 @@ public class AirSeaTool implements IPlugin,
         }
 
         airMarkerManager.setIcaoDatabase(null);
+        if (icaoDatabase != null) icaoDatabase.shutdown();
         icaoDatabase = null;
 
         // Invalidate pane so it is recreated fresh on next onStart/showPane

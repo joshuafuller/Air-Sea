@@ -15,6 +15,8 @@ public class IcaoRecord {
     public final String ownop;
     /** Short type code, e.g. "L1J" (landplane, 1 engine, jet). May be empty. */
     public final String shortType;
+    /** Internal marker used to remove records absent from a refreshed database. */
+    int loadGeneration;
 
     public IcaoRecord(boolean mil, String model, String ownop, String shortType) {
         this.mil      = mil;

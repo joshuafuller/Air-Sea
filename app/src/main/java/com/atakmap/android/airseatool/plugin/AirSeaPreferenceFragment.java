@@ -197,7 +197,8 @@ public class AirSeaPreferenceFragment extends PluginPreferenceFragment {
                         updateIcaoDeleteSummary(icaoDeletePref, icaoDatabase);
                         if ("Download cancelled".equals(msg)) return;
                         Toast.makeText(act,
-                                success ? "ICAO database updated" : "Update failed: " + msg,
+                                success ? "ICAO database updated: " + msg
+                                        : "Update failed: " + msg,
                                 Toast.LENGTH_LONG).show();
                     });
                 },
